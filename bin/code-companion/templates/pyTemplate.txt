@@ -1,0 +1,7 @@
+fileForOutput = open('your_output.txt','w')
+fileForInput = open('your_input.txt','r')
+
+# write your code here...
+
+fileForInput.close()
+fileForOutput.close()

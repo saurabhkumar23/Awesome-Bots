@@ -1,0 +1,24 @@
+{
+  "name": "awesome-bots",
+  "version": "1.0.0",
+  "description": "Curated collection of amazing automation scripts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "getTestCases" : "node ./bin/code-companion/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhkumar23/Awesome-Bots.git"
+  },
+  "author": "Saurabh Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saurabhkumar23/Awesome-Bots/issues"
+  },
+  "homepage": "https://github.com/saurabhkumar23/Awesome-Bots#readme",
+  "dependencies": {
+    "puppeteer": "^10.0.0",
+    "readline-sync": "^1.4.10"
+  }
+}
