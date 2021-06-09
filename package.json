@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "getTestCases" : "node ./bin/code-companion/main.js",
     "ytAnalyzer" : "node ./bin/youtube-playlist-analyzer/main.js",
-    "cleanup" : "node ./bin/cleanup/main.js"
+    "cleanup" : "node ./bin/cleanup/main.js",
+    "spotify-manage" : "node ./bin/spotify-playlist-manager/main.js"
   },
   "repository": {
     "type": "git",
