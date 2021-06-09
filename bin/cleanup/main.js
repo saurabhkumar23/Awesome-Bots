@@ -63,7 +63,8 @@ function organizer(src, dest) {
     }
 }
 
-let src = process.argv[2]||process.cwd()             // cwd path
+let src = process.argv[2] || process.cwd()
+src = path.join(src,'/bin/cleanup')             // cwd path
 let dest = path.join(src,"organized_files")          // create des directory path
 
 if (fs.existsSync(dest) == false){          // if des directory not exists
