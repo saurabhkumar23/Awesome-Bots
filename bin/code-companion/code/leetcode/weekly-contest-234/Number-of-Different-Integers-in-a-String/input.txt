@@ -1,0 +1,3 @@
+Input: word = "a123bc34d8ef34"
+Input: word = "leet1234code234"
+Input: word = "a1b01c001"

@@ -1,0 +1,4 @@
+Input: s = "(name)is(age)yearsold", knowledge = [["name","bob"],["age","two"]]
+Input: s = "hi(name)", knowledge = [["a","b"]]
+Input: s = "(a)(a)(a)aaa", knowledge = [["a","yes"]]
+Input: s = "(a)(b)", knowledge = [["a","b"],["b","a"]]

@@ -29,8 +29,8 @@ else if(platform == '1'){
     platform = 'codeforces'
 }
 else if(platform == '2'){
-    leetEmail = readline.question('write your leetcode email')
-    leetPass = readline.question('write your leetcode password',{hideEchoBack: true})
+    leetEmail = readline.question('write your leetcode email: ')
+    leetPass = readline.question('write your leetcode password: ',{hideEchoBack: true})
     platform = 'leetcode'
 }
 else if(platform == '3'){
@@ -125,15 +125,16 @@ async function getCodeforces(){
         }
         let inputPath = path.join(problemPath,'input.txt');
         let outputPath = path.join(problemPath,'output.txt');
-        let yourInputPath = path.join(problemPath,'your_input.txt');
-        let yourOutputPath = path.join(problemPath,'your_output.txt');
         let codePath = path.join(problemPath,totalProbs[prob] + '.' + coding_lang);
         //console.log(input,output);
+        if(input.length > 1){
+            inputData += `${input.length}\n`;
+        }
         for(let i = 0; i < input.length ; i++){             
-            inputData += `(INPUT - ${i+1})\n${input[i]}\n`;                 // input
+            inputData += `${input[i]}`;                                // input
         }
         for(let i = 0 ; i < output.length ; i++){                          
-            outputData += `(OUTPUT - ${i+1})\n${output[i]}\n`;                 // output
+            outputData += `${output[i]}`;                 // output
         }
         //console.log(inputData);
         //console.log(outputData);
@@ -143,16 +144,6 @@ async function getCodeforces(){
             }
         });
         fs.writeFileSync(outputPath,outputData,function(err){   // create output file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourInputPath,"",function(err){      // create your_input file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourOutputPath,"",function(err){   // create your_output file                    
             if(err){
                 return console.log(err);
             }
@@ -203,25 +194,13 @@ async function getCodechef() {
         }        
         let inputPath = path.join(problemPath,'input.txt');
         let outputPath = path.join(problemPath,'output.txt');
-        let yourInputPath = path.join(problemPath,'your_input.txt');
-        let yourOutputPath = path.join(problemPath,'your_output.txt');
         let codePath = path.join(problemPath,totalProbs[prob] + '.' + coding_lang);
-        fs.writeFileSync(inputPath,'INPUT : ' + '\n' + inputData + '\n',function(err){      // create input file                    
+        fs.writeFileSync(inputPath,inputData,function(err){      // create input file                    
             if(err){
                 return console.log(err);
             }
         });
-        fs.writeFileSync(outputPath,'OUTPUT : ' + '\n' + outputData + '\n',function(err){   // create output file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourInputPath,"",function(err){      // create your_input file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourOutputPath,"",function(err){   // create your_output file                    
+        fs.writeFileSync(outputPath,outputData,function(err){   // create output file                    
             if(err){
                 return console.log(err);
             }
@@ -295,10 +274,7 @@ async function getLeetcode() {
         }        
         let inputPath = path.join(problemPath,'input.txt');
         let outputPath = path.join(problemPath,'output.txt');
-        let yourInputPath = path.join(problemPath,'your_input.txt');
-        let yourOutputPath = path.join(problemPath,'your_output.txt');
         let codePath = path.join(problemPath,totalProbs[prob] + '.' + coding_lang);
-        //console.log(data);
         for(let i=0;i<data.length;i++){
             let wholeItem = data[i].split('\n');
             inputData += `${wholeItem[0]}\n`;                      // input 
@@ -312,16 +288,6 @@ async function getLeetcode() {
             }
         });
         fs.writeFileSync(outputPath,outputData,function(err){   // create output file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourInputPath,"",function(err){      // create your_input file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourOutputPath,"",function(err){   // create your_output file                    
             if(err){
                 return console.log(err);
             }
@@ -371,15 +337,16 @@ async function getAtcoder() {
         }        
         let inputPath = path.join(problemPath,'input.txt');
         let outputPath = path.join(problemPath,'output.txt');
-        let yourInputPath = path.join(problemPath,'your_input.txt');
-        let yourOutputPath = path.join(problemPath,'your_output.txt');
         let codePath = path.join(problemPath,totalProbs[prob] + '.' + coding_lang);
         //console.log(data);
+        if(data.length > 2){
+            inputData += `${data.length/2}\n`;
+        }
         for(let i=0;i<data.length;i+=2){
-            inputData += `(INPUT - ${(i/2)+1})\n${data[i]}\n`;                 // input 
+            inputData += `${data[i]}`;                             // input 
         }
         for(let i=1;i<data.length;i+=2){
-            outputData += `(OUTPUT - ${Math.floor(i/2)+1})\n${data[i]}\n`;               // output
+            outputData += `${data[i]}`;                          // output
         }
         //console.log('input ------- > '+inputData);
         //console.log('output ------- > '+outputData);
@@ -389,16 +356,6 @@ async function getAtcoder() {
             }
         });
         fs.writeFileSync(outputPath,outputData,function(err){   // create output file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourInputPath,"",function(err){      // create your_input file                    
-            if(err){
-                return console.log(err);
-            }
-        });
-        fs.writeFileSync(yourOutputPath,"",function(err){   // create your_output file                    
             if(err){
                 return console.log(err);
             }
@@ -434,3 +391,4 @@ function setPaths(){
         fs.mkdirSync(contestPath);                   
     }
 }
+
