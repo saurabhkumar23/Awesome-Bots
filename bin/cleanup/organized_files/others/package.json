@@ -1,0 +1,14 @@
+{
+  "name": "file-organiser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "organise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "organise": "organise.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
