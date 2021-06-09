@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "getTestCases" : "node ./bin/code-companion/main.js"
+    "getTestCases" : "node ./bin/code-companion/main.js",
+    "ytAnalyzer" : "node ./bin/youtube-playlist-analyzer/main.js"
   },
   "repository": {
     "type": "git",
