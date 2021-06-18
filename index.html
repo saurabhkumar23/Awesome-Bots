@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Puppeteer Scripts</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="header">
+            <a href="https://github.com/saurabhkumar23/Awesome-Bots" target="_blank" class="title">JS Automation <i class="fas fa-rocket"></i></a>
+        </div>
+        <!-- main-content -->
+        <div class="main-content">
+            <!-- sidebar -->
+            <div class="sidebar">
+                <div class="search">
+                    <input type="text" placeholder="Search" id="search">
+                    <div>
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <ul class="scripts-list" id="searchList">
+                    <li><a href="#cleanup">Cleanup</a></li>
+                    <li><a href="#codemon">Code Companion</a></li>
+                    <li><a href="#spotify">Spotify Playlist Manager</a></li>
+                    <li><a href="#youtube">Youtube Playlist Analyzer</a></li>
+                </ul>
+            </div>
+            <!-- details -->
+            <div class="detail-container">
+                <div id="cleanup" class="content-div">
+                    <h3>
+                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/cleanup">
+                            ## Cleanup
+                        </a> 
+                    </h3>
+                    <li> A command line utility that organises 
+                        files in a directory into subdirectories based on the file extensions.
+                    </li>
+                    <code class="usage">$npm run cleanup</code>
+                </div>
+                <div id="codecom" class="content-div">
+                    <h3>
+                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/code-companion">
+                            ## Code Companion
+                        </a> 
+                    </h3>
+                    <li>Automation script which download test cases of coding problems 
+                        from the platform and adds template according to your coding language.</li>
+                    <li>You can save your time during contest time. 
+                        You don't have to write the testcases again and again. </li>
+                    <li>supported coding platforms: Codechef, Codeforces, Leetcode, Atcoder</li>
+                    <li>give your coding platform (codeforces/codechef/leetcode/atcoder)</li>
+                    <li>for leetcode, you need to give your leetcode credentials.</li>
+                    <li>give your contest id. (you will find it on your contest URL. the id written at the end of the url)</p>
+                    <li>choose your coding language (cpp/java/python).</li>
+                    <li>now, script will will visit all the problems of the contest and
+                        download their testcases.
+                        <ul>
+                            <li>It will create multiple directories A B C D E inside the Problemset directory depending on the number of problems in contest. directory flow will look like this:
+                                code/codeforces/1492/A</li>
+                            <li>each directory created will have</li>
+                            <ul>
+                                <li>input.txt : containing problem inputs.</li>    
+                                <li>output.txt : containing problem outputs.</li> 
+                            </ul>
+                        </ul>
+                    <code class="usage">$npm run getTestCases</code>
+                </div>
+                <div id="spotify" class="content-div">
+                    <h3>
+                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/spotify-playlist-manager">
+                            ## Spotify Playlist Manager
+                        </a> 
+                    </h3>
+                    <li>Automation script which can manage your spotify playlist data.</li>
+                    <li>Managing playlists with huge amount of data consumes a lot of time. 
+                        With the help of this application you can manage your playlists fastly. 
+                        You don't have to create playlists, add or delete songs manually again and again.</li>
+                    <li>give your spotify credentials and choose your operation.</li> 
+                    <li>operations:</li>
+                    <ul>
+                        <li>Create Playlist : Add songs to your new Playlist.</li>
+                        <li>Modify any Playlist : Add/Remove songs from that Playlist.</li>
+                    </ul>
+                    <code class="usage">$npm run spotify-manage</code>
+                </div>
+                <div id="youtube" class="content-div">
+                    <h3>
+                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/youtube-playlist-analyzer">
+                            ## Youtube Playlist Analyzer
+                        </a> 
+                    </h3>
+                    <li>Automation script which give details about the content of a youtube playlist.</li>
+                    <li>It will calculate the overall duration of the playlist and the time it will take to cover all videos in different time formats. 
+                        It also shows the playlist data in tabular format. 
+                        The best part is, It can work for playlists of any length.</li>
+                    <li>give the youtube playlist link 
+                        (for eg: https://www.youtube.com/playlist?list=PLf7o2Xlqx5OHfAX0mN4CDryeNIWDn3C3_)</li>
+                    <li>choose your operation.</li>
+                    <li>script will show: </li>
+                    <ul>
+                        <li>no of videos, total time duration</li>
+                        <li>time duration for different formats : 1.25x, 5x, 1.75x and 2x.</li>
+                        <li>playlist content in tabular form.</li>
+                    </ul>
+                    <code class="usage">$npm run ytpAnalyzer</code>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</body>
+
+</html>

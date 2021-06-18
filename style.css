@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ************ header *************** */
+
+.header {
+    background: #263238;
+    min-height: 50px;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header a{
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+/* ************ main-content *************** */
+
+.main-content{
+    padding-top: 50px;
+    display: flex;
+}
+
+/* sidebar */
+.sidebar{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    border: 1px solid #f2f2f2;
+}
+
+.search{
+    padding: 15px 10px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.scripts-list {
+    padding-left: 0px;
+    margin-top: 15px;
+}
+
+.scripts-list li{
+    padding: 10px 15px;
+    font-size: 13px;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.scripts-list li a {
+    color: #263238;
+    text-decoration: none;
+}
+
+.scripts-list li:hover a{
+    transition: all 0.1s;
+    color: white;
+}
+
+.scripts-list li:hover{
+    transition: all 0.1s;
+    background-color: #263238;
+}
+
+/* detail container */
+.detail-container{
+    margin-left: 300px;
+}
+
+.detail-container h3 a{
+    text-decoration: none;
+    color: black;
+}
+
+.content-div{
+    padding: 20px;
+}
+
+.content-div h3{
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.content-div li{
+    line-height: 1.7rem;
+    letter-spacing: 0.1rem;
+}
+
+.usage {
+    background: #f2f2f2;
+    padding: 2px 5px;
+    border-radius: 2px;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .sidebar{
+        display: none;
+    }
+    .detail-container{
+        margin-left: 0;
+    }
+    .content-div{
+        padding: 20px 60px;
+    }
+    .content-div h1{
+        padding: 20px 60px;
+    }
+}
