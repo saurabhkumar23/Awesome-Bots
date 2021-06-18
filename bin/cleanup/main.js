@@ -65,9 +65,7 @@ function organizer(src, dest) {
 
 let src = process.argv[2] || process.cwd()
 src = path.join(src,'/bin/cleanup/testing_data')             // cwd path
-console.log(src)
 let dest = path.join(src,"organized_files")          // create des directory path
-console.log(dest)
 
 if (fs.existsSync(dest) == false){          // if des directory not exists
     fs.mkdirSync(dest)                    // create des directory
