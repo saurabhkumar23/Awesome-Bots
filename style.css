@@ -84,6 +84,7 @@ html {
 .scripts-list li a {
     color: #263238;
     text-decoration: none;
+    display: block;
 }
 
 .scripts-list li:hover a{
