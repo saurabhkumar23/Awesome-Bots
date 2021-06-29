@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cleanup": "node ./bin/cleanup/main.js",
     "getTestCases": "node ./bin/code-companion/main.js",
     "ytpAnalyzer": "node ./bin/youtube-playlist-analyzer/main.js",
     "spotify-manage": "node ./bin/spotify-playlist-manager/main.js"
@@ -15,7 +14,7 @@
     "url": "git+https://github.com/saurabhkumar23/Awesome-Bots.git"
   },
   "bin": {
-    "organise": "./bin/cleanup/main.js"
+    "cleanup": "./bin/cleanup/main.js"
   },
   "author": "Saurabh Kumar",
   "license": "MIT",

@@ -25,5 +25,3 @@ Sometimes you want to track down the duration of a youtube playlist. This applic
 
 #### CLEANUP
 A simple command line utility that organises files in a directory into subdirectories based on the file extensions.
-
-    $npm run cleanup
