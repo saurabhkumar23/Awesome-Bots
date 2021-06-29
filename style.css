@@ -109,6 +109,7 @@ html {
 
 .content-div{
     padding: 20px;
+    margin: 20px 0px;
 }
 
 .content-div h3{
@@ -120,6 +121,27 @@ html {
     line-height: 1.7rem;
     letter-spacing: 0.1rem;
 }
+/*  */
+.content-div .code{
+    margin: 10px;
+    line-height: 20px;
+    padding: 10px 20px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%), 0 4px 4px 0 rgb(0 0 0 / 19%);
+}
+.content-div .screenshot-container{
+    text-align: center;
+    margin: 25px auto;
+}
+
+.content-div .screenshot-container img{
+    width: 50%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 6px;
+}
+/*  */
 
 .usage {
     background: #f2f2f2;
