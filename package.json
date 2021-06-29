@@ -4,9 +4,7 @@
   "description": "Curated collection of amazing automation scripts.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "getTestCases": "node ./bin/code-companion/main.js",
-    "spotify-manage": "node ./bin/spotify-playlist-manager/main.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,7 +13,8 @@
   "bin": {
     "cleanup": "./bin/cleanup/main.js",
     "ytpAnalyzer": "./bin/youtube-playlist-analyzer/main.js",
-    "spotifyManage": "./bin/spotify-playlist-manager/main.js"
+    "spotifyManage": "./bin/spotify-playlist-manager/main.js",
+    "getTestCases": "./bin/code-companion/main.js"
   },
   "author": "Saurabh Kumar",
   "license": "MIT",
