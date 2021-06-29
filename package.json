@@ -14,7 +14,8 @@
   },
   "bin": {
     "cleanup": "./bin/cleanup/main.js",
-    "ytpAnalyzer": "./bin/youtube-playlist-analyzer/main.js"
+    "ytpAnalyzer": "./bin/youtube-playlist-analyzer/main.js",
+    "spotifyManage": "./bin/spotify-playlist-manager/main.js"
   },
   "author": "Saurabh Kumar",
   "license": "MIT",
