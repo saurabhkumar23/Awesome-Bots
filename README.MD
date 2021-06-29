@@ -19,9 +19,7 @@ Managing playlists with huge amount of data consumes a lot of time. With the hel
     $npm run spotify-manage
 
 #### YOUTUBE PLAYLIST ANALYZER
-Sometimes you want to track down the duration of a youtube playlist. This application will help you to calculate the overall duration of the playlist and the time it will take to cover all videos in different time formats. It also shows the playlist data in tabular format. The best part is, It can work for playlists of any length.
-
-    $npm run ytpAnalyzer
+Sometimes you want to track down the duration of a youtube playlist. This application will help you to calculate the overall duration of the playlist and the time it will take to cover all videos in different speed formats. It also shows the playlist data in tabular format. The best part is, It can work for playlists of any length.
 
 #### CLEANUP
 A simple command line utility that organises files in a directory into subdirectories based on the file extensions.
