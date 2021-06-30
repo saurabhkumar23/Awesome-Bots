@@ -6,6 +6,7 @@ Open your Terminal/Command in the directory for the project and run these comman
     git clone "https://github.com/saurabhkumar23/Awesome-Bots.git"
     cd Awesome-Bots
     npm install #install the dependencies from package.json
+    npm link #make all scripts global
 
 #### CODING COMPANION
 You can save your time during contest time. You don't have to write the testcases again and again. It will also create templates which will save a lot of time. This setup will download all of your testcases from the contest.

@@ -136,7 +136,7 @@ html {
 }
 
 .content-div .screenshot-container img{
-    width: 80%;
+    width: 75%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     border-radius: 6px;
