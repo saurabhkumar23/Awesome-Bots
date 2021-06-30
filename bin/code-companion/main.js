@@ -370,9 +370,8 @@ async function getAtcoder() {
 
 function setPaths(){
     src = process.cwd();
-    src = path.join(src,'bin/code-companion')
     dest = path.join(src,'code');
-    codeTemplatePath = path.join(src,'templates/'+codeTemplate);
+    codeTemplatePath = path.join(__dirname,'/templates/'+codeTemplate);
 
     // create code folder if not exist
     if (fs.existsSync(dest) == false){         
