@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 50vw;
+            height: 50vh;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" contenteditable="true">
+        <code class="usage">git clone "https://github.com/saurabhkumar23/Awesome-Bots.git"</code><br>
+        <code class="usage">cd Awesome-Bots</code><br>
+        <code class="usage">npm install</code><br>
+        <code class="usage">npm link</code>
+    </div>
+    <button class="cpy-btn">Copy</button>
+
+    <script>
+
+        let cpyBtn = document.querySelector('.cpy-btn')
+        cpyBtn.addEventListener('click',CopyToClipboard)
+        function CopyToClipboard() {
+            let copyBoxElement = document.querySelector('.container');
+            copyBoxElement.focus();
+            document.execCommand('selectAll');
+            document.execCommand("copy");
+            alert("Text has been copied")
+            copyBoxElement.blur();
+            let sel = document.getSelection();
+            sel.removeAllRanges();
+        }
+        
+    </script>
+</body>
+</html>
