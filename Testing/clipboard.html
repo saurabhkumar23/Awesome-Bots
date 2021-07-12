@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
+        .code{
             width: 50vw;
             height: 50vh;
             border: 1px solid black;
@@ -14,29 +14,34 @@
     </style>
 </head>
 <body>
-    <div class="container" contenteditable="true">
-        <code class="usage">git clone "https://github.com/saurabhkumar23/Awesome-Bots.git"</code><br>
-        <code class="usage">cd Awesome-Bots</code><br>
-        <code class="usage">npm install</code><br>
-        <code class="usage">npm link</code>
+    <div class="code" contenteditable="true">
+        <div>
+            <code class="usage">git clone "https://github.com/saurabhkumar23/Awesome-Bots.git"</code><br>
+            <code class="usage">cd Awesome-Bots</code><br>
+            <code class="usage">npm install</code><br>
+            <code class="usage">npm link</code>
+        </div>
+        <button class="copy-to-clipboard-icon">Copy</button>
+        <!-- <button class="copy-to-clipboard-icon">copy icon</button> -->
     </div>
-    <button class="cpy-btn">Copy</button>
 
-    <script>
+    <div class="code" contenteditable="true">
+        <div>
+            <code class="usage">$npm testcases</code><br>
+        </div>
+        <button class="copy-to-clipboard-icon">Copy</button>
+        <!-- <button class="copy-to-clipboard-icon">copy icon</button> -->
+    </div>
 
-        let cpyBtn = document.querySelector('.cpy-btn')
-        cpyBtn.addEventListener('click',CopyToClipboard)
-        function CopyToClipboard() {
-            let copyBoxElement = document.querySelector('.container');
-            copyBoxElement.focus();
-            document.execCommand('selectAll');
-            document.execCommand("copy");
-            alert("Text has been copied")
-            copyBoxElement.blur();
-            let sel = document.getSelection();
-            sel.removeAllRanges();
-        }
-        
+    <div class="code" contenteditable="true">
+        <div>
+            <code class="usage">$npm cleanup</code><br>
+        </div>
+        <button class="copy-to-clipboard-icon">Copy</button>
+        <!-- <button class="copy-to-clipboard-icon">copy icon</button> -->
+    </div>
+
+    <script src="clip.js">
     </script>
 </body>
 </html>
