@@ -6,200 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="./public/icon.png">
     <title>Puppeteer Scripts</title>
 </head>
 
 <body>
     <div class="container">
-        <!-- header --->
-        <div class="header">
-            <a href="https://github.com/saurabhkumar23/Awesome-Bots" target="_blank" class="title">JS Automation <i class="fas fa-rocket"></i></a>
-        </div>
         <!-- main-content -->
         <div class="main-content">
-            <!-- sidebar -->
-            <div class="sidebar">
-                <div class="search">
-                    <input type="text" placeholder="Search" id="search">
-                    <div>
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                <ul class="scripts-list" id="searchList">
-                    <a class="jump-link" href="#get-started">Get Started</a>
-                    <a class="jump-link" href="#cleanup">Cleanup</a>
-                    <a class="jump-link" href="#codecom">Code Companion</a>
-                    <a class="jump-link" href="#spotify">Spotify Playlist Manager</a>
-                    <a class="jump-link" href="#youtube">Youtube Playlist Analyzer</a>
-                </ul>
-            </div>
             <!-- details -->
             <div class="detail-container">
                 <div id="get-started" class="content-div">
-                    <h3>
-                        <a>## Get Started</a> 
-                    </h3>
-                    <li>Open your Terminal/Command and run these commands.</li>
                     <div class="code">
-                        <code class="usage">git clone "https://github.com/saurabhkumar23/Awesome-Bots.git"</code><br>
-                        <code class="usage">cd Awesome-Bots</code><br>
-                        <code class="usage">npm install</code><br>
-                        <code class="usage">npm link</code>
-                        <!-- <button class="copy-to-clipboard-icon">copy icon</button> -->
+                        <div>
+                            <code class="usage">git clone "https://github.com/saurabhkumar23/Awesome-Bots.git"</code><br>
+                            <code class="usage">cd Awesome-Bots</code><br>
+                            <code class="usage">npm install</code><br>
+                            <code class="usage">npm link</code>
+                        </div>
+                        <button class="copy-to-clipboard-icon">copy icon</button>
                     </div>
                 </div>
                 <div id="cleanup" class="content-div">
-                    <h3>
-                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/cleanup">
-                            ## Cleanup
-                        </a> 
-                    </h3>
-                    <li> A command line utility that organises 
-                        files in a directory into subdirectories based on the file extensions.
-                    </li>
-                    <li>Step 1: Go to the folder location which you want to organize.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/organiser-step-1.png" alt="file-organiser-step-1">
-                    </div>
-                    <li>Step 2 : Open your terminal</li>
-                    <div class="screenshot-container">
-                        <img src="./public/organiser-step-2.png" alt="file-organiser-step-2">
-                    </div>
-                    <li>Step 3: Run command: </li>
                     <div class="code">
-                        <code class="usage">$cleanup</code>
-                    </div>
-                    <li>Step 4: A new folder will be created with the name <b>organized_files</b>.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/organiser-step-3.png" alt="file-organiser-step-3">
-                    </div>
-                    <li>Step 5: Open this folder, and see everything is organised :)</li>
-                    <div class="screenshot-container">
-                        <img src="./public/organiser-step-4.png" alt="file-organiser-step-3">
-                    </div>                    
+                        <div>
+                            <code class="usage">$cleanup</code>
+                        </div>
+                        <button class="copy-to-clipboard-icon">copy icon</button>
+                    </div>                   
                 </div>
                 <div id="codecom" class="content-div">
-                    <h3>
-                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/code-companion">
-                            ## Code Companion
-                        </a> 
-                    </h3>
-                    <li>You can save your time during contest time. You don't have to write the testcases again and again.
-                        this automation script which download the test cases of all the problems 
-                        from different coding platforms and adds template according to your coding language.</li>
-                    <li>supported coding platforms: <small>Codechef, Codeforces, Leetcode, Atcoder</small></li>
-                    <li>Step 1 : Open your terminal.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-1.png" alt="code-step-1">
-                    </div>
-                    <li>Step 2 : Run command: </li>
                     <div class="code">
-                        <code class="usage">$getTestCases</code>
-                    </div>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-2.png" alt="code-step-2">
-                    </div>
-                    <li>Step 3 : Choose your coding platform. <small>for leetcode, you need to give your leetcode credentials.</small></li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-3.png" alt="code-step-3">
-                    </div>
-                    <li>Step 4 : give your contest id. <small>(you will find it on your contest URL. the id written at the end of the url)</small></p>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-4.png" alt="code-step-4">
-                    </div>
-                    <li>Step 5 : choose your coding language <small>(cpp/java/python).</small></li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-5.png" alt="code-step-5">
-                    </div>
-                    <li>Step 6 : now, script will do his job :)</li>
-                    <li>Step 7 : A new folder will be created with the name <b>code</b>.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-6.png" alt="code-step-6">
-                    </div>
-                    <li>Step 8 : It will contain the coding platform folder.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-7.png" alt="code-step-7">
-                    </div>
-                    <li>Step 9 : It will contain the contest ID folder.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-8.png" alt="code-step-8">
-                    </div>
-                    <li>Step 10 : Here, we can see all the problem folders.</li>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-9.png" alt="code-step-9">
-                    </div>
-                    <li>Step 11 : Each problem folder will have these 3 files.</li>
-                    <ul>
-                        <li>input.txt : containing problem inputs.</li>    
-                        <li>output.txt : containing problem outputs.</li> 
-                        <li>our source code file</li>
-                    </ul>
-                    <div class="screenshot-container">
-                        <img src="./public/code-step-10.png" alt="code-step-10">
+                        <div>
+                            <code class="usage">$getTestCases</code>
+                        </div>
+                        <button class="copy-to-clipboard-icon">copy icon</button>
                     </div>
                 </div>
                 <div id="spotify" class="content-div">
-                    <h3>
-                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/spotify-playlist-manager">
-                            ## Spotify Playlist Manager
-                        </a> 
-                    </h3>
-                    <li>Managing playlists with huge amount of data consumes a lot of time. 
-                        this Automation script can help you manage your spotify playlist.
-                        you don't have to create playlists, add or delete songs manually again and again.
-                    </li>
-                    <li>Step 1 : Open your terminal</li>
-                    <div class="screenshot-container">
-                        <img src="./public/spotify-step-1.png" alt="spotify-step-1">
-                    </div>
-                    <li>Step 2 : Run the following command and give your spotify credentials.</li>
                     <div class="code">
-                        <code class="usage">$spotifyManage</code>
+                        <div>
+                            <code class="usage">$spotifyManage</code>
+                        </div>
+                        <button class="copy-to-clipboard-icon">copy icon</button>
                     </div>
-                    <div class="screenshot-container">
-                        <img src="./public/spotify-step-2.png" alt="spotify-step-2">
-                    </div>
-                    <li>Step 3 : choose one of the following operation and then provide the necessary details.</li>
-                    <ul>
-                        <li>Create Playlist : Add songs to your new Playlist.</li>
-                        <li>Modify any Playlist : Add/Remove songs from that Playlist.</li>
-                    </ul>
-                    <div class="screenshot-container">
-                        <img src="./public/spotify-step-3.png" alt="spotify-step-3">
-                    </div>
-                    <li>Step 4 : now, script will handle everything :)</li>
                 </div>
                 <div id="youtube" class="content-div">
-                    <h3>
-                        <a href="https://github.com/saurabhkumar23/Awesome-Bots/tree/master/bin/youtube-playlist-analyzer">
-                            ## Youtube Playlist Analyzer
-                        </a> 
-                    </h3>
-                    <li>Sometimes you want to track down the duration of a youtube playlist. 
-                        This Automation script will help you to calculate the following details of a playlist.</li>
-                    <ul>
-                        <li>no of videos of the playlist.</li>
-                        <li>length of the playlist.</li>
-                        <li>length of playlist when covered in different speed formats : 1.25x, 5x, 1.75x and 2x.</li>
-                        <li>playlist content in tabular form.</li>
-                    </ul>
-                    <li>Step 1 : Open your terminal</li>
-                    <div class="screenshot-container">
-                        <img src="./public/ytp-step-1.png" alt="ytp-step-1">
-                    </div>   
-                    <li>Step 2 : Run below command and paste the youtube playlist link 
-                        <small>(for eg: https://www.youtube.com/playlist?list=PLf7o2Xlqx5OHfAX0mN4CDryeNIWDn3C3_)</small></li>
                     <div class="code">
-                        <code class="usage">$ytpAnalyzer</code>
-                    </div>
-                    <div class="screenshot-container">
-                        <img src="./public/ytp-step-2.png" alt="ytp-step-2">
-                    </div>
-                    <li>Step 3 : Done!</li>
-                    <div class="screenshot-container">
-                        <img src="./public/ytp-step-3.png" alt="ytp-step-3">
+                        <div>
+                            <code class="usage">$ytpAnalyzer</code>
+                        </div>
+                        <button class="copy-to-clipboard-icon">copy icon</button>
                     </div> 
                 </div>
             </div>
@@ -207,8 +65,7 @@
         </div>
     </div>
 
-
-    <script src="script.js"></script>
+    <script src="clip.js"></script>
 </body>
 
 </html>

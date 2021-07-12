@@ -5,13 +5,17 @@ for(let i=0;i<cpyBtns.length;i++){
 }
 
 function CopyToClipboard(e) {
-    console.log(e)
+    // console.log(e.target.parentElement.querySelector('div'))
 	// let copyBoxElement = document.querySelector(".code");
-	// copyBoxElement.focus();
-	// document.execCommand("selectAll");
-	// document.execCommand("copy");
-	// alert("Text has been copied");
-	// copyBoxElement.blur();
-	// let sel = document.getSelection();
-	// sel.removeAllRanges();
+    let copyBoxElement = e.target.parentElement.querySelector('div');
+    console.log(copyBoxElement)
+    copyBoxElement.contenteditable = true
+    copyBoxElement.focus();
+    copyBoxElement.select();
+	document.execCommand("copy");
+	alert("Text has been copied");
+    copyBoxElement.contenteditable = false
+	copyBoxElement.blur();
+	let sel = document.getSelection();
+	sel.removeAllRanges();
 }
