@@ -126,10 +126,10 @@ async function fillCredentials(page){
     });
 
     // Login
-    await page.waitForSelector("._3f37264be67c8f40fa9f76449afdb4bd-scss._1f2f8feb807c94d2a0a7737b433e19a8-scss", {
-        visible: true
+    await page.waitForSelector("button[data-testid='login-button']", {
+        visible: true     
     });
-    await page.click("._3f37264be67c8f40fa9f76449afdb4bd-scss._1f2f8feb807c94d2a0a7737b433e19a8-scss");
+    await page.click("button[data-testid='login-button']");
 
     // writing credentials
     await page.waitForSelector('#login-username', {
@@ -151,10 +151,10 @@ async function createPlaylist(page){
     ]);
 
     // click playlist name
-    await page.waitForSelector('.a12b67e576d73f97c44f1f37026223c4-scss',{
+    await page.waitForSelector('h1[as="h1"]',{
         visible: true
     });
-    await page.click('.a12b67e576d73f97c44f1f37026223c4-scss')
+    await page.click('h1[as="h1"]')
 
     // fill playlist name input field
     await page.waitForSelector('[data-testid="playlist-edit-details-name-input"]',{
@@ -172,19 +172,19 @@ async function createPlaylist(page){
 
 async function addSongToPlaylist(page,song){
     // type song in search bar
-    await page.waitForSelector('._655bc45ccbf3d91c685865ff470892eb-scss.f3fc214b257ae2f1d43d4c594a94497f-scss',{
+    await page.waitForSelector('input[role="searchbox"]',{
         visible:true
     });
-    await page.click('._655bc45ccbf3d91c685865ff470892eb-scss.f3fc214b257ae2f1d43d4c594a94497f-scss',{clickCount:3})
-    await page.type('._655bc45ccbf3d91c685865ff470892eb-scss.f3fc214b257ae2f1d43d4c594a94497f-scss',song,{delay:300});
+    await page.click('input[role="searchbox"]',{clickCount:3})
+    await page.type('input[role="searchbox"]',song,{delay:300});
 
     await page.waitForTimeout(500);
 
     // add song button
-    await page.waitForSelector('._3f37264be67c8f40fa9f76449afdb4bd-scss._110dbc41d89af63f97cdd8b7cd7fea47-scss._2e6fd4bdb936691a0eceb04a1e880c2f-scss',{
+    await page.waitForSelector('button[data-testid="add-to-playlist-button"]',{
         visible:true
     });
-    await page.click('._3f37264be67c8f40fa9f76449afdb4bd-scss._110dbc41d89af63f97cdd8b7cd7fea47-scss._2e6fd4bdb936691a0eceb04a1e880c2f-scss');
+    await page.click('button[data-testid="add-to-playlist-button"]');
 }
 
 async function addSongsToModifyPlaylist(page){
@@ -205,16 +205,16 @@ async function addSongsToModifyPlaylist(page){
     await page.type('[role="search"] input',modifyPlaylist,{delay:300});
 
     // go to playlist div
-    await page.waitForSelector('._85fec37a645444db871abd5d31db7315-scss',{
+    await page.waitForSelector('.L4WROPnQ7MPGhylvVyxd',{
         visible:true
     });
-    await page.click('._85fec37a645444db871abd5d31db7315-scss');
+    await page.click('.L4WROPnQ7MPGhylvVyxd');
 
     // go to 'find more' button
-    await page.waitForSelector('._1de06189bc33bb25805c19bdbc99664e-scss',{
+    await page.waitForSelector('.HeBhibwzuyWAXBm9vJlm',{
         visible:true
     });
-    await page.click('._1de06189bc33bb25805c19bdbc99664e-scss');
+    await page.click('.HeBhibwzuyWAXBm9vJlm');
 
     for(let i=0;i<noOfSongsToAdd;i++){
         await addSongToPlaylist(page,songsToAdd[i]);
@@ -239,20 +239,20 @@ async function removeSongsFromModifyPlaylist(page){
     await page.type('[role="search"] input',modifyPlaylist,{delay:300});
 
     // go to playlist div
-    await page.waitForSelector('._85fec37a645444db871abd5d31db7315-scss',{
+    await page.waitForSelector('.L4WROPnQ7MPGhylvVyxd',{
         visible:true
     });
-    await page.click('._85fec37a645444db871abd5d31db7315-scss');
+    await page.click('.L4WROPnQ7MPGhylvVyxd');
 
     // make your input array to lowerCase for filtering purpose
     for(let item in songsToRemove){
         songsToRemove[item] = songsToRemove[item].toLowerCase();
     }
 
-    await page.waitForSelector('[data-testid="playlist-tracklist"]  .c27f49a483c85a5b88b3f37fb918e497-scss > [role="presentation"] .da0bc4060bb1bdb4abb8e402916af32e-scss.standalone-ellipsis-one-line._8a9c5cc886805907de5073b8ebc3acd8-scss',{
+    await page.waitForSelector('[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] ._gvEBguxvbSruOQCkWrz.standalone-ellipsis-one-line.ipxcyIaAWQfeUHO468Os',{
         visible:true
     });
-    let currentSongs = await page.$$eval('[data-testid="playlist-tracklist"]  .c27f49a483c85a5b88b3f37fb918e497-scss > [role="presentation"] .da0bc4060bb1bdb4abb8e402916af32e-scss.standalone-ellipsis-one-line._8a9c5cc886805907de5073b8ebc3acd8-scss', songs => songs.map(song => song.textContent.toLowerCase()));
+    let currentSongs = await page.$$eval('[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] ._gvEBguxvbSruOQCkWrz.standalone-ellipsis-one-line.ipxcyIaAWQfeUHO468Os', songs => songs.map(song => song.textContent.toLowerCase()));
 
     for(let i=currentSongs.length-1;i>=0;i--){
         if(songsToRemove.includes(currentSongs[i]) == true){
@@ -265,10 +265,10 @@ async function removeSongsFromModifyPlaylist(page){
 async function removeSongFromPlaylist(page,index){
     await page.waitForTimeout(500)
     // click 'more' button of that particular song
-    await page.waitForSelector(`[data-testid="playlist-tracklist"]  .c27f49a483c85a5b88b3f37fb918e497-scss > [role="presentation"] [role="row"]:nth-of-type(${index+1})  [aria-label="More"]`,{
+    await page.waitForSelector(`[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] [role="row"]:nth-of-type(${index+1})  [aria-label="More"]`,{
         visible:true
     });
-    await page.click(`[data-testid="playlist-tracklist"]  .c27f49a483c85a5b88b3f37fb918e497-scss > [role="presentation"] [role="row"]:nth-of-type(${index+1})  [aria-label="More"]`);
+    await page.click(`[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] [role="row"]:nth-of-type(${index+1})  [aria-label="More"]`);
     
     await page.waitForTimeout(500);
 
