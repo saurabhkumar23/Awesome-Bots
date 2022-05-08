@@ -98,6 +98,7 @@ async function main() {
 
     if(operation == '1'){
         await createPlaylist(page);                    // create playlist
+        await page.waitForTimeout(1000);
         for(let i=0;i<noOfSongsToAdd;i++){
             await addSongToPlaylist(page,songsToAdd[i]);         // add songs
         }
@@ -114,6 +115,7 @@ async function main() {
     else{
         await addSongsToModifyPlaylist(page);             // add songs
         console.log('done successfully!')
+        await page.waitForTimeout(1000);
         await removeSongsFromModifyPlaylist(page);           // remove songs
         console.log('done successfully!')
     }
@@ -151,10 +153,10 @@ async function createPlaylist(page){
     ]);
 
     // click playlist name
-    await page.waitForSelector('h1[as="h1"]',{
+    await page.waitForSelector('.rEN7ncpaUeSGL9z0NGQR h1',{
         visible: true
     });
-    await page.click('h1[as="h1"]')
+    await page.click('.rEN7ncpaUeSGL9z0NGQR h1')
 
     // fill playlist name input field
     await page.waitForSelector('[data-testid="playlist-edit-details-name-input"]',{
@@ -178,7 +180,7 @@ async function addSongToPlaylist(page,song){
     await page.click('input[role="searchbox"]',{clickCount:3})
     await page.type('input[role="searchbox"]',song,{delay:300});
 
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1000);
 
     // add song button
     await page.waitForSelector('button[data-testid="add-to-playlist-button"]',{
@@ -189,12 +191,12 @@ async function addSongToPlaylist(page,song){
 
 async function addSongsToModifyPlaylist(page){
     // go to search 
-    await page.waitForSelector('.icon.search-icon',{
+    await page.waitForSelector('a[href="/search"]',{
         visible:true
     });
     await Promise.all([
         page.waitForNavigation(),
-        page.click('.icon.search-icon'),             
+        page.click('a[href="/search"]'),             
     ]);
 
     // type your playlist in search bar
@@ -205,16 +207,16 @@ async function addSongsToModifyPlaylist(page){
     await page.type('[role="search"] input',modifyPlaylist,{delay:300});
 
     // go to playlist div
-    await page.waitForSelector('.L4WROPnQ7MPGhylvVyxd',{
+    await page.waitForSelector('[data-testid="herocard-click-handler"]',{
         visible:true
     });
-    await page.click('.L4WROPnQ7MPGhylvVyxd');
+    await page.click('[data-testid="herocard-click-handler"]');
 
     // go to 'find more' button
-    await page.waitForSelector('.HeBhibwzuyWAXBm9vJlm',{
+    await page.waitForSelector('.STDuzt77yRCueC4Ohenl',{
         visible:true
     });
-    await page.click('.HeBhibwzuyWAXBm9vJlm');
+    await page.click('.STDuzt77yRCueC4Ohenl');
 
     for(let i=0;i<noOfSongsToAdd;i++){
         await addSongToPlaylist(page,songsToAdd[i]);
@@ -223,12 +225,12 @@ async function addSongsToModifyPlaylist(page){
 
 async function removeSongsFromModifyPlaylist(page){
     // go to search 
-    await page.waitForSelector('.icon.search-icon',{
+    await page.waitForSelector('a[href="/search"]',{
         visible:true
     });
     await Promise.all([
         page.waitForNavigation(),
-        page.click('.icon.search-icon'),             
+        page.click('a[href="/search"]'),             
     ]);
 
     // type your playlist in search bar
@@ -239,20 +241,20 @@ async function removeSongsFromModifyPlaylist(page){
     await page.type('[role="search"] input',modifyPlaylist,{delay:300});
 
     // go to playlist div
-    await page.waitForSelector('.L4WROPnQ7MPGhylvVyxd',{
+    await page.waitForSelector('[data-testid="herocard-click-handler"]',{
         visible:true
     });
-    await page.click('.L4WROPnQ7MPGhylvVyxd');
+    await page.click('[data-testid="herocard-click-handler"]');
 
     // make your input array to lowerCase for filtering purpose
     for(let item in songsToRemove){
         songsToRemove[item] = songsToRemove[item].toLowerCase();
     }
 
-    await page.waitForSelector('[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] ._gvEBguxvbSruOQCkWrz.standalone-ellipsis-one-line.ipxcyIaAWQfeUHO468Os',{
+    await page.waitForSelector('[data-testid="playlist-tracklist"] .JUa6JJNj7R_Y3i4P8YUX > [role="presentation"] .fCtMzo.t_yrXoUO3qGsJS4Y6iXX.standalone-ellipsis-one-line',{
         visible:true
     });
-    let currentSongs = await page.$$eval('[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] ._gvEBguxvbSruOQCkWrz.standalone-ellipsis-one-line.ipxcyIaAWQfeUHO468Os', songs => songs.map(song => song.textContent.toLowerCase()));
+    let currentSongs = await page.$$eval('[data-testid="playlist-tracklist"] .JUa6JJNj7R_Y3i4P8YUX > [role="presentation"] .fCtMzo.t_yrXoUO3qGsJS4Y6iXX.standalone-ellipsis-one-line', songs => songs.map(song => song.textContent.toLowerCase()));
 
     for(let i=currentSongs.length-1;i>=0;i--){
         if(songsToRemove.includes(currentSongs[i]) == true){
@@ -265,14 +267,14 @@ async function removeSongsFromModifyPlaylist(page){
 async function removeSongFromPlaylist(page,index){
     await page.waitForTimeout(500)
     // click 'more' button of that particular song
-    await page.waitForSelector(`[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] [role="row"]:nth-of-type(${index+1})  [aria-label="More"]`,{
+    await page.waitForSelector(`[data-testid="more-button"]:nth-of-type(${index+2})`,{
         visible:true
     });
-    await page.click(`[data-testid="playlist-tracklist"] .vB_gmMwzmB3GcEliiiys > [role="presentation"] [role="row"]:nth-of-type(${index+1})  [aria-label="More"]`);
+    await page.click(`[data-testid="more-button"]:nth-of-type(${index+2})`);
     
     await page.waitForTimeout(500);
 
     // click 'remove from this playlist'
-    await page.waitForSelector('#context-menu ul li:nth-of-type(7)');
-    await page.click('#context-menu ul li:nth-of-type(7)');
+    await page.waitForSelector('#context-menu ul li:nth-of-type(6)');
+    await page.click('#context-menu ul li:nth-of-type(6)');
 }
