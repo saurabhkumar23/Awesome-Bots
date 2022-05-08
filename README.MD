@@ -11,7 +11,7 @@ Open your Terminal/Command in the directory for the project and run these comman
 #### CODING COMPANION - [CLICK FOR DEMO](https://drive.google.com/file/d/1K6KPqTnaj6jE9xr67JdkSsaQzbKVwciV/view?usp=sharing)
 You can save your time during contest time. You don't have to write the testcases again and again. It will also create templates which will save a lot of time. This setup will download all of your testcases from the contest.
 
-#### SPOTIFY PLAYLIST MANAGER
+#### SPOTIFY PLAYLIST MANAGER - [CLICK FOR DEMO](https://drive.google.com/file/d/1ihALDS1wnhzt2Bt_B_z9oLUcWU0Oyarb/view?usp=sharing)
 Managing playlists with huge amount of data consumes a lot of time. With the help of this application you can manage your playlists fastly. You don't have to create playlists, add or delete songs manually again and again. It will automatically handle those operations. 
 
 #### YOUTUBE PLAYLIST ANALYZER - [CLICK FOR DEMO](https://drive.google.com/file/d/1dMyEgOsNur2uYoRH2EXIdNv9iyVU1MZT/view?usp=sharing)
